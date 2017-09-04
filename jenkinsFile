@@ -1,0 +1,15 @@
+pipeline {
+
+  agent any
+
+  stages {
+    stage ('build') {
+      label 'slave'
+    }
+    tools {
+      jdk "JDK 8"
+      maven "apache-maven-3.3.9"
+    }
+  }
+
+}
