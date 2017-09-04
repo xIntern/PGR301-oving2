@@ -4,14 +4,16 @@ pipeline {
 
   stages {
     stage ('build') {
+        agent {
+           label 'slave'
+        }
         steps {
             sh 'mvn clean install'
-            sh 'Hello World'
         }
-    }
-    tools {
-      jdk "JDK 8"
-      maven "apache-maven-3.3.9"
+        tools {
+          jdk "JDK 8"
+          maven "apache-maven-3.3.9"
+        }
     }
   }
 
